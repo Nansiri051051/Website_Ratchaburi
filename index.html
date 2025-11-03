@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>รายการร้านอาหารแนะนำ 5 ร้าน (ราชบุรี)</title>
+    <style>
+        /* ปรับความกว้างสูงสุดของเนื้อหาให้แคบลง*/
+        body { font-family: sans-serif; padding: 20px; max-width: 750px; /* ลดจาก 900px */ margin: auto; background-color: #f4f4f9; }
+        header { text-align: center; margin-bottom: 40px; }
+        h1 { color: #333; }
+        h2 { color: #0056b3; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        
+        .restaurant-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .restaurant-card {
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.08); 
+            transition: box-shadow 0.2s;
+        }
+        .restaurant-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* ขยายขนาดรูปภาพ */
+        .restaurant-image-container {
+            width: 150px; 
+            height: 150px; 
+            flex-shrink: 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .restaurant-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .restaurant-info {
+            flex-grow: 1;
+        }
+        
+        /* สไตล์ชื่อร้าน (บรรทัดบนสุด) */
+        .restaurant-name {
+            font-size: 1.5em; 
+            color: #000000ff;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .restaurant-name a {
+            color: inherit;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .restaurant-name a:hover {
+            text-decoration: underline;
+        }
+
+        /* สไตล์สำหรับบรรทัดคะแนนและรีวิว */
+        .rating-review-line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        /* สไตล์กรอบคะแนนดาว */
+        .rating-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3px 8px;
+            background-color: #f84444ff;
+            color: white;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+        
+        /* จัดรูปแบบ 4.4★ */
+        .rating-box .score {
+            margin-right: 3px;
+        }
+        .rating-box .star-icon {
+            font-size: 1em; 
+            color: gold; 
+            line-height: 1;
+        }
+        
+        .review-text {
+            color: #555;
+            font-size: 1.0em;
+        }
+
+        .status-badge {
+            display: inline-block;
+            margin-left: auto;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: white;
+        }
+
+        .open { background-color: #04a509ff; }
+        .closed { background-color: #f44336; }
+        
+        .cuisine-type { 
+            font-size: 0.9em;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        .location-text {
+            font-size: 0.85em; 
+            color: #777;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ร้านอาหารในจังหวัดราชบุรี</h1>
+    </header>
+
+    <h2>ร้านอาหารที่แนะนำ พร้อมสรุปคะแนนรีวิว</h2>
+
+    <div class="restaurant-list">
+        
+        <div class="restaurant-card">
+            <div class="restaurant-image-container">
+                <img src="https://www.chillnaid.com/wp-content/uploads/2017/08/2b267c8d9d2c48619f61e92050b46517.jpg" 
+                alt="รูปร้าน ครัวม่อนไข่">
+            </div>
+            <div class="restaurant-info">
+                <div class="restaurant-name">
+                    1.<a href="r1.html">ครัวม่อนไข่</a>
+                    <span class="status-badge open">เปิดอยู่</span>
+                </div>
+                <div class="rating-review-line">
+                    <div class="rating-box">
+                        <span class="score">4.4</span>
+                        <span class="star-icon">★</span>
+                    </div>
+                    <span class="review-text">536 รีวิว</span>
+                </div>
+                <p class="cuisine-type">ประเภท: อาหารไทย</p>
+            </div>
+        </div>
+        
+        <div class="restaurant-card">
+            <div class="restaurant-image-container">
+                <img src="https://เที่ยวราชบุรี.com/wp-content/uploads/2017/11/cowboy-600.jpg" alt="รูปร้าน Cowboy Cafe">
+            </div>
+            <div class="restaurant-info">
+                <div class="restaurant-name">
+                    2.<a href="r2.html">Cowboy Cafe</a>
+                    <span class="status-badge open">เปิดอยู่</span>
+                </div>
+                <div class="rating-review-line">
+                    <div class="rating-box">
+                        <span class="score">4.1</span>
+                        <span class="star-icon">★</span>
+                    </div>
+                    <span class="review-text">93 รีวิว</span>
+                </div>
+                <p class="cuisine-type">ประเภท: สเต๊ก อาหารนานาชาติ อาหารตามสั่ง</p>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <div class="restaurant-image-container">
+                <img src="https://เที่ยวราชบุรี.com/wp-content/uploads/2017/07/IMG_4633.jpg" alt="รูปร้าน โอ่งข้าวโอ่งน้ำ">
+            </div>
+            <div class="restaurant-info">
+                <div class="restaurant-name">
+                    3.<a href="r3.html">โอ่งข้าวโอ่งน้ำ</a>
+                    <span class="status-badge open">เปิดอยู่</span>
+                </div>
+                <div class="rating-review-line">
+                    <div class="rating-box">
+                        <span class="score">4.0</span>
+                        <span class="star-icon">★</span>
+                    </div>
+                    <span class="review-text">33 รีวิว</span>
+                </div>
+                <p class="cuisine-type">ประเภท: อาหารไทย</p>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <div class="restaurant-image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRItIzDkWEZfxCzCeWco3U6y4wkCEbalZrJ3g&s" 
+                alt="รูปร้าน สวนอาหารมะม่วงคู่">
+            </div>
+            <div class="restaurant-info">
+                <div class="restaurant-name">
+                    4.<a href="r4.html">สวนอาหารมะม่วงคู่ (เจดีย์หัก)</a>
+                    <span class="status-badge open">เปิดอยู่</span>
+                </div>
+                <div class="rating-review-line">
+                    <div class="rating-box">
+                        <span class="score">3.8</span>
+                        <span class="star-icon">★</span>
+                    </div>
+                    <span class="review-text">30 รีวิว</span>
+                </div>
+                <p class="cuisine-type">ประเภท: อาหารไทย</p>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <div class="restaurant-image-container">
+                <img src="https://img.wongnai.com/p/400x0/2022/11/02/777988aafdef4ea08e1ee80b995b0e7b.jpg" alt="รูปร้าน กอบัว">
+            </div>
+            <div class="restaurant-info">
+                <div class="restaurant-name">
+                    5.<a href="r5.html">ร้านกอบัว</a>
+                    <span class="status-badge open">เปิดอยู่</span>
+                </div>
+                <div class="rating-review-line">
+                    <div class="rating-box">
+                        <span class="score">4.6</span>
+                        <span class="star-icon">★</span>
+                    </div>
+                    <span class="review-text">15 รีวิว</span>
+                </div>
+                <p class="cuisine-type">ประเภท: อาหารไทย</p>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
